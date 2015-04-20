@@ -2,9 +2,6 @@ import urllib.request
 import time
 import re
 import os
-# import socket
-
-# socket.setdefaulttimeout(10)
 
 url = 'https://yande.re/post?page='
 
@@ -41,7 +38,10 @@ endPage = int(input('Please input end page num:'))
 for i in range(startPage, endPage + 1):
 	print('########################### Processing page' , i ,'###########################')
 	for imgurl in getImgList(url + str(i) ):
-		saveImg(imgurl, saveDir)
-		print()
+		try:
+			saveImg(imgurl, saveDir)
+			print()
+		except Exception:
+			pass
 	
 print ('###########################Download is complete###########################')
