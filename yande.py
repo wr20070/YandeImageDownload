@@ -36,7 +36,7 @@ endPage = int(input('Please input end page num:'))
 
 
 for i in range(startPage, endPage + 1):
-	print('########################### Processing page' , i ,'###########################')
+	print('########################### Processing in page' , i ,'###########################')
 	for imgurl in getImgList(url + str(i) ):
 		try:
 			saveImg(imgurl, saveDir)
